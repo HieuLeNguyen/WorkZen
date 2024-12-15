@@ -52,6 +52,7 @@ fastlane/test_output
 
 # Firebase
 WorkZen/GoogleService-Info.plist
+WorkZen/Info.plist
 
 # Realm
 *.realm
