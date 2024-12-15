@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CB7B097A4C058980919A581E /* Pods_WorkZen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E5E1798DAF3745C03D63D9 /* Pods_WorkZen.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		006FF3D62D0F284C003D284C /* WorkZen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkZen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C294F20BDEE22DBA8955A9C /* Pods-WorkZen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkZen.release.xcconfig"; path = "Target Support Files/Pods-WorkZen/Pods-WorkZen.release.xcconfig"; sourceTree = "<group>"; };
+		B4699C0449AE92305DBC766C /* Pods-WorkZen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkZen.debug.xcconfig"; path = "Target Support Files/Pods-WorkZen/Pods-WorkZen.debug.xcconfig"; sourceTree = "<group>"; };
+		E5E5E1798DAF3745C03D63D9 /* Pods_WorkZen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkZen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB7B097A4C058980919A581E /* Pods_WorkZen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +55,8 @@
 			children = (
 				006FF3D82D0F284C003D284C /* WorkZen */,
 				006FF3D72D0F284C003D284C /* Products */,
+				E3FE42A235CA3216F4AF920E /* Pods */,
+				DBAABA233C2BBB22D5E3652B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +68,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		DBAABA233C2BBB22D5E3652B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5E5E1798DAF3745C03D63D9 /* Pods_WorkZen.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3FE42A235CA3216F4AF920E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B4699C0449AE92305DBC766C /* Pods-WorkZen.debug.xcconfig */,
+				8C294F20BDEE22DBA8955A9C /* Pods-WorkZen.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -65,9 +93,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 006FF3E92D0F284D003D284C /* Build configuration list for PBXNativeTarget "WorkZen" */;
 			buildPhases = (
+				615E9E7BB985DD3BF4E72691 /* [CP] Check Pods Manifest.lock */,
 				006FF3D22D0F284C003D284C /* Sources */,
 				006FF3D32D0F284C003D284C /* Frameworks */,
 				006FF3D42D0F284C003D284C /* Resources */,
+				A6DE2A140C3CBA218A380C69 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -77,8 +107,6 @@
 				006FF3D82D0F284C003D284C /* WorkZen */,
 			);
 			name = WorkZen;
-			packageProductDependencies = (
-			);
 			productName = WorkZen;
 			productReference = 006FF3D62D0F284C003D284C /* WorkZen.app */;
 			productType = "com.apple.product-type.application";
@@ -127,6 +155,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		615E9E7BB985DD3BF4E72691 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WorkZen-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6DE2A140C3CBA218A380C69 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WorkZen/Pods-WorkZen-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WorkZen/Pods-WorkZen-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WorkZen/Pods-WorkZen-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		006FF3D22D0F284C003D284C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,6 +210,7 @@
 /* Begin XCBuildConfiguration section */
 		006FF3EA2D0F284D003D284C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4699C0449AE92305DBC766C /* Pods-WorkZen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -170,6 +241,7 @@
 		};
 		006FF3EB2D0F284D003D284C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C294F20BDEE22DBA8955A9C /* Pods-WorkZen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
