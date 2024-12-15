@@ -1,0 +1,87 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.xcscmblueprint
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/xcshareddata/xcdebugger/
+*.xcworkspace/*
+!*.xcworkspace/contents.xcworkspacedata
+!*.xcworkspace/xcshareddata/
+!*.xcworkspace/xcshareddata/xcdebugger/
+*.idea/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+/.build/
+/.swiftpm/
+
+# CocoaPods
+Pods/
+podfile.lock
+
+# Carthage
+Carthage/Build/
+
+# Accio dependency management
+Dependencies/
+.accio/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Firebase
+WorkZen/GoogleService-Info.plist
+
+# Realm
+*.realm
+*.realm.lock
+*.realm.management/
+
+# Temporary files and backups
+*~
+*.swp
+*.swo
+*.sw~
+*.tmp
+*.temp
+*.backup
+*.bak
+
+# Logs
+*.log
+*.log.*
+
+# Build artifacts
+build/
+DerivedData/
+
+# Environment Variables
+.env
+.env.*
+
+# Testing
+*.xctest
+
+# SwiftLint
+.swiftlint.yml
