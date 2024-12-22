@@ -39,15 +39,6 @@ class HomeViewController: UIViewController {
         
         let menu = UIMenu(title: "Select display mode", children: menuItems)
         
-        // Thêm menu vào leftBarButtonItem
-        if #available(iOS 14.0, *) {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", image: UIImage(systemName: "ellipsis.circle"), primaryAction: nil, menu: menu)
-        } else {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu",
-                                                               style: .plain,
-                                                               target: self,
-                                                               action: #selector(showMenu))
-        }
         // Thêm add vào rightBarButtonItem
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose,
                                                             target: self,
@@ -98,29 +89,6 @@ class HomeViewController: UIViewController {
         customView2.isHidden = true
     }
     
-    // MARK: - Show Menu
-    @objc private func showMenu() {
-        let alertController = UIAlertController(title: "Select display mode", message: nil, preferredStyle: .actionSheet)
-        
-        let optionDay = UIAlertAction(title: "Day", style: .default) { [weak self] _ in
-            self?.updateViewMode(to: "Day")
-        }
-        let optionWeek = UIAlertAction(title: "Week", style: .default) { [weak self] _ in
-            self?.updateViewMode(to: "Week")
-        }
-        let optionMonth = UIAlertAction(title: "Month", style: .default) { [weak self] _ in
-            self?.updateViewMode(to: "Month")
-        }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
-        alertController.addAction(optionDay)
-        alertController.addAction(optionWeek)
-        alertController.addAction(optionMonth)
-        alertController.addAction(cancel)
-        
-        present(alertController, animated: true, completion: nil)
-    }
-    
     // MARK: - Add New Item
     @objc private func createNewTask() {
         
@@ -149,6 +117,7 @@ class HomeViewController: UIViewController {
     
 }
 
+// MARK: - UITableViewDelegate, UITableViewDataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
