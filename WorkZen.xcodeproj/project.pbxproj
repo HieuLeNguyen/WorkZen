@@ -7,21 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB7B097A4C058980919A581E /* Pods_WorkZen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E5E1798DAF3745C03D63D9 /* Pods_WorkZen.framework */; };
+		00C42D362D4F862A00DBD139 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 00C42D352D4F862A00DBD139 /* FirebaseAnalytics */; };
+		00C42D382D4F862A00DBD139 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 00C42D372D4F862A00DBD139 /* FirebaseAuth */; };
+		00C42D3A2D4F862A00DBD139 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 00C42D392D4F862A00DBD139 /* FirebaseFirestore */; };
+		00C42D3F2D4F878D00DBD139 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 00C42D3E2D4F878D00DBD139 /* RealmSwift */; };
+		00C42D402D4F889100DBD139 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 00C42D3E2D4F878D00DBD139 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		00C42D412D4F889100DBD139 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				00C42D402D4F889100DBD139 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		006FF3D62D0F284C003D284C /* WorkZen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkZen.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C294F20BDEE22DBA8955A9C /* Pods-WorkZen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkZen.release.xcconfig"; path = "Target Support Files/Pods-WorkZen/Pods-WorkZen.release.xcconfig"; sourceTree = "<group>"; };
-		B4699C0449AE92305DBC766C /* Pods-WorkZen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkZen.debug.xcconfig"; path = "Target Support Files/Pods-WorkZen/Pods-WorkZen.debug.xcconfig"; sourceTree = "<group>"; };
-		E5E5E1798DAF3745C03D63D9 /* Pods_WorkZen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkZen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 		006FF3E82D0F284D003D284C /* Exceptions for "WorkZen" folder in "WorkZen" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Resources/Info.plist,
 			);
 			target = 006FF3D52D0F284C003D284C /* WorkZen */;
 		};
@@ -43,7 +58,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB7B097A4C058980919A581E /* Pods_WorkZen.framework in Frameworks */,
+				00C42D362D4F862A00DBD139 /* FirebaseAnalytics in Frameworks */,
+				00C42D382D4F862A00DBD139 /* FirebaseAuth in Frameworks */,
+				00C42D3F2D4F878D00DBD139 /* RealmSwift in Frameworks */,
+				00C42D3A2D4F862A00DBD139 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,8 +73,6 @@
 			children = (
 				006FF3D82D0F284C003D284C /* WorkZen */,
 				006FF3D72D0F284C003D284C /* Products */,
-				E3FE42A235CA3216F4AF920E /* Pods */,
-				DBAABA233C2BBB22D5E3652B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,23 +84,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DBAABA233C2BBB22D5E3652B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E5E5E1798DAF3745C03D63D9 /* Pods_WorkZen.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E3FE42A235CA3216F4AF920E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B4699C0449AE92305DBC766C /* Pods-WorkZen.debug.xcconfig */,
-				8C294F20BDEE22DBA8955A9C /* Pods-WorkZen.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -92,11 +91,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 006FF3E92D0F284D003D284C /* Build configuration list for PBXNativeTarget "WorkZen" */;
 			buildPhases = (
-				615E9E7BB985DD3BF4E72691 /* [CP] Check Pods Manifest.lock */,
 				006FF3D22D0F284C003D284C /* Sources */,
 				006FF3D32D0F284C003D284C /* Frameworks */,
 				006FF3D42D0F284C003D284C /* Resources */,
-				A6DE2A140C3CBA218A380C69 /* [CP] Embed Pods Frameworks */,
+				00C42D412D4F889100DBD139 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -134,6 +132,10 @@
 			);
 			mainGroup = 006FF3CD2D0F284C003D284C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				00C42D342D4F862A00DBD139 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				00C42D3B2D4F878D00DBD139 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 006FF3D72D0F284C003D284C /* Products */;
 			projectDirPath = "";
@@ -154,48 +156,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		615E9E7BB985DD3BF4E72691 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WorkZen-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A6DE2A140C3CBA218A380C69 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WorkZen/Pods-WorkZen-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WorkZen/Pods-WorkZen-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WorkZen/Pods-WorkZen-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		006FF3D22D0F284C003D284C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -209,7 +169,6 @@
 /* Begin XCBuildConfiguration section */
 		006FF3EA2D0F284D003D284C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4699C0449AE92305DBC766C /* Pods-WorkZen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -218,14 +177,14 @@
 				DEVELOPMENT_TEAM = 438RLR53H4;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WorkZen/Info.plist;
+				INFOPLIST_FILE = WorkZen/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = WorkZen;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -241,7 +200,6 @@
 		};
 		006FF3EB2D0F284D003D284C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C294F20BDEE22DBA8955A9C /* Pods-WorkZen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -250,14 +208,14 @@
 				DEVELOPMENT_TEAM = 438RLR53H4;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WorkZen/Info.plist;
+				INFOPLIST_FILE = WorkZen/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = WorkZen;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -412,6 +370,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		00C42D342D4F862A00DBD139 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.7.0;
+			};
+		};
+		00C42D3B2D4F878D00DBD139 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		00C42D352D4F862A00DBD139 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00C42D342D4F862A00DBD139 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		00C42D372D4F862A00DBD139 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00C42D342D4F862A00DBD139 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		00C42D392D4F862A00DBD139 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00C42D342D4F862A00DBD139 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		00C42D3E2D4F878D00DBD139 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00C42D3B2D4F878D00DBD139 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 006FF3CE2D0F284C003D284C /* Project object */;
 }
