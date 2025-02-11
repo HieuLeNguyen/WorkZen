@@ -1,10 +1,3 @@
-//
-//  Constants.swift
-//  WorkZen
-//
-//  Created by Nguyễn Văn Hiếu on 8/2/25.
-//
-
 import UIKit
 
 public let sb = UIStoryboard(name: "Main", bundle: .main)

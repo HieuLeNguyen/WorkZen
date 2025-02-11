@@ -12,6 +12,7 @@
 		00C42D3A2D4F862A00DBD139 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 00C42D392D4F862A00DBD139 /* FirebaseFirestore */; };
 		00C42D3F2D4F878D00DBD139 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 00C42D3E2D4F878D00DBD139 /* RealmSwift */; };
 		00C42D402D4F889100DBD139 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 00C42D3E2D4F878D00DBD139 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D5292E09211B4A16C1D86128 /* Pods_WorkZen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C754CED70C0203AA85C283A /* Pods_WorkZen.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +31,9 @@
 
 /* Begin PBXFileReference section */
 		006FF3D62D0F284C003D284C /* WorkZen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkZen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C754CED70C0203AA85C283A /* Pods_WorkZen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkZen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4DBF491078ECF5ED970D7B1 /* Pods-WorkZen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkZen.debug.xcconfig"; path = "Target Support Files/Pods-WorkZen/Pods-WorkZen.debug.xcconfig"; sourceTree = "<group>"; };
+		E97D4D7779A6C9DC938AC454 /* Pods-WorkZen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkZen.release.xcconfig"; path = "Target Support Files/Pods-WorkZen/Pods-WorkZen.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -62,6 +66,7 @@
 				00C42D382D4F862A00DBD139 /* FirebaseAuth in Frameworks */,
 				00C42D3F2D4F878D00DBD139 /* RealmSwift in Frameworks */,
 				00C42D3A2D4F862A00DBD139 /* FirebaseFirestore in Frameworks */,
+				D5292E09211B4A16C1D86128 /* Pods_WorkZen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +78,8 @@
 			children = (
 				006FF3D82D0F284C003D284C /* WorkZen */,
 				006FF3D72D0F284C003D284C /* Products */,
+				F4B114CC43F1174E9D7564E3 /* Pods */,
+				BBD0716D56CBE81C1A94E101 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,6 +91,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		BBD0716D56CBE81C1A94E101 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C754CED70C0203AA85C283A /* Pods_WorkZen.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4B114CC43F1174E9D7564E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4DBF491078ECF5ED970D7B1 /* Pods-WorkZen.debug.xcconfig */,
+				E97D4D7779A6C9DC938AC454 /* Pods-WorkZen.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,6 +116,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 006FF3E92D0F284D003D284C /* Build configuration list for PBXNativeTarget "WorkZen" */;
 			buildPhases = (
+				C4ABFEB999DE768120ACEF2E /* [CP] Check Pods Manifest.lock */,
 				006FF3D22D0F284C003D284C /* Sources */,
 				006FF3D32D0F284C003D284C /* Frameworks */,
 				006FF3D42D0F284C003D284C /* Resources */,
@@ -156,6 +182,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C4ABFEB999DE768120ACEF2E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WorkZen-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		006FF3D22D0F284C003D284C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -169,6 +220,7 @@
 /* Begin XCBuildConfiguration section */
 		006FF3EA2D0F284D003D284C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4DBF491078ECF5ED970D7B1 /* Pods-WorkZen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -200,6 +252,7 @@
 		};
 		006FF3EB2D0F284D003D284C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E97D4D7779A6C9DC938AC454 /* Pods-WorkZen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -96,8 +96,7 @@ extension HomeViewController {
     // MARK: - Add New Task
     @objc
     private func createNewTask() {
-        guard let vc = sb.instantiateViewController(withIdentifier: "CreateTaskViewController")
-                as? CreateTaskViewController else {
+        guard let vc = sb.instantiateViewController(withIdentifier: "CreateTaskViewController") as? CreateTaskViewController else {
             return
         }
         

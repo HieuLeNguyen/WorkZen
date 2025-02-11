@@ -70,16 +70,15 @@ final class RealmManager {
         notificationToken = results.observe { changes in
             switch changes {
             case .initial:
-                onChange() // Lần đầu load dữ liệu
+                onChange()
             case .update(_, _, _, _):
-                onChange() // Khi có thay đổi
+                onChange()
             case .error(let error):
                 print("Realm observe error: \(error.localizedDescription)")
             }
         }
     }
     
-    // Tự giải phóng
     deinit {
         notificationToken?.invalidate()
     }
