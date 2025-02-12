@@ -1,7 +1,7 @@
 import UIKit
 
 final class SuggestUIView: UIView {
-
+    
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "Logo")

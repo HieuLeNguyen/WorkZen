@@ -19,23 +19,25 @@ final class TaskCell: UITableViewCell {
         containerView.layer.borderColor = UIColor.lightGray.cgColor
         // Thiết lập shadow
         containerView.layer.shadowColor = UIColor.black.cgColor
-        containerView.layer.shadowOpacity = 0.3 // Độ mờ của shadow
+        containerView.layer.shadowOpacity = 0.1 // Độ mờ của shadow
         containerView.layer.shadowOffset = CGSize(width: 0, height: 1) // Hướng đổ bóng
         containerView.layer.shadowRadius = 4 // Bán kính của shadow
         
         importanceImageView.preferredSymbolConfiguration = UIImage.SymbolConfiguration(scale: .large)
         categoryImageView.preferredSymbolConfiguration = UIImage.SymbolConfiguration(scale: .large)
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
+    
+    // MARK: - Data configuration for cell
     
     func config(
         title: String,
@@ -51,9 +53,13 @@ final class TaskCell: UITableViewCell {
         setColor(color)
     }
     
+    // MARK: - Set background color for cell
+    
     private func setColor(_ color: TaskColor) {
         containerView.backgroundColor = UIColor(named: color.rawValue)
     }
+    
+    // MARK: - Set Importance Level & Change Color Flag
     
     private func setImportance(_ importance: ImportanceLevel) {
         let flagImg = UIImage(systemName: "flag.fill")?.withRenderingMode(.alwaysOriginal)

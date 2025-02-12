@@ -33,7 +33,7 @@ final class Task: Object {
     }
     
     // Add Index Proprerties: Tối ưu hiệu xuất tìm kiếm khi thêm chỉ mục
-    override class func indexedProperties() -> [String] {
+    override static func indexedProperties() -> [String] {
         ["name", "category"]
     }
 }

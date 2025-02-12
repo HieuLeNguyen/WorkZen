@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00C42D3F2D4F878D00DBD139 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 00C42D3E2D4F878D00DBD139 /* RealmSwift */; };
 		00C42D402D4F889100DBD139 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 00C42D3E2D4F878D00DBD139 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		00DA05BC2D5BBBCD00C83B40 /* .swiftlint.yml  in Resources */ = {isa = PBXBuildFile; fileRef = 00DA05BB2D5BBBCD00C83B40 /* .swiftlint.yml  */; };
 		D5292E09211B4A16C1D86128 /* Pods_WorkZen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C754CED70C0203AA85C283A /* Pods_WorkZen.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		006FF3D62D0F284C003D284C /* WorkZen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkZen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00DA05BB2D5BBBCD00C83B40 /* .swiftlint.yml  */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swiftlint.yml "; sourceTree = "<group>"; };
 		2C754CED70C0203AA85C283A /* Pods_WorkZen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkZen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DBF491078ECF5ED970D7B1 /* Pods-WorkZen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkZen.debug.xcconfig"; path = "Target Support Files/Pods-WorkZen/Pods-WorkZen.debug.xcconfig"; sourceTree = "<group>"; };
 		E97D4D7779A6C9DC938AC454 /* Pods-WorkZen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkZen.release.xcconfig"; path = "Target Support Files/Pods-WorkZen/Pods-WorkZen.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 		006FF3CD2D0F284C003D284C = {
 			isa = PBXGroup;
 			children = (
+				00DA05BB2D5BBBCD00C83B40 /* .swiftlint.yml  */,
 				006FF3D82D0F284C003D284C /* WorkZen */,
 				006FF3D72D0F284C003D284C /* Products */,
 				F4B114CC43F1174E9D7564E3 /* Pods */,
@@ -114,6 +117,7 @@
 				006FF3D32D0F284C003D284C /* Frameworks */,
 				006FF3D42D0F284C003D284C /* Resources */,
 				00C42D412D4F889100DBD139 /* Embed Frameworks */,
+				00DA06312D5BC1F500C83B40 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -169,12 +173,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00DA05BC2D5BBBCD00C83B40 /* .swiftlint.yml  in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		00DA06312D5BC1F500C83B40 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
 		C4ABFEB999DE768120ACEF2E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

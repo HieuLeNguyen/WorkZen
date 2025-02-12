@@ -1,8 +1,8 @@
 import UIKit
 
 final class EditTaskViewController: UIViewController {
-
-    private let rm = RealmManager.shared
+    
+    private let realmManager = RealmManager.shared
     var task: Task?
     var onSave: ((Task) -> Void)?
     private var selectedTag: TaskCategory?
@@ -13,7 +13,7 @@ final class EditTaskViewController: UIViewController {
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var descField: UITextField!
     @IBOutlet weak var chooseDatePicker: UIDatePicker!
-    @IBOutlet weak var tagButton: UIButton!
+    @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var importanceButton: UIButton!
     @IBOutlet weak var colorButton: UIButton!
     @IBOutlet weak var isCompletionSwitch: UISwitch!
@@ -21,11 +21,15 @@ final class EditTaskViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
+        titleField.delegate = self
+        descField.delegate = self
+        titleField.becomeFirstResponder()
         chooseDatePicker.contentHorizontalAlignment = .leading
         navigationItem.title = "Edit Task✏️"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
                                                             target: self,
-                                                            action: #selector(saveButton))
+                                                            action: #selector(didTapSaveTaskButton))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel,
                                                            target: self,
                                                            action: #selector(dismissModal))
@@ -33,7 +37,7 @@ final class EditTaskViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        tagButton.menu = tagButtonTapped()
+        categoryButton.menu = tagButtonTapped()
         importanceButton.menu = importanceButtonTapped()
         colorButton.menu = colorButtonTapped()
     }
@@ -52,12 +56,12 @@ final class EditTaskViewController: UIViewController {
     // MARK: - Save Button
     
     @objc
-    private func saveButton() {
+    private func didTapSaveTaskButton() {
         guard let title = titleField.text, !title.isEmpty else {
             showAlert(title: "Error", message: "Please enter task title")
             return
         }
-
+        
         let newTask = Task(
             name: title,
             description: descField.text ?? "No description available",
@@ -73,7 +77,7 @@ final class EditTaskViewController: UIViewController {
     
     @IBAction func didTapDeleteButton(_ sender: Any) {
         if let task = task {
-            rm.delete(task) { result in
+            realmManager.delete(task) { result in
                 switch result {
                 case .success:
                     print("Edit success")
@@ -117,16 +121,13 @@ final class EditTaskViewController: UIViewController {
     
     private func importanceButtonTapped() -> UIMenu {
         let imgFlagFill = UIImage(systemName: "flag.fill")?.withRenderingMode(.alwaysOriginal)
-        let menuItem1 = UIAction(title: "Low", image: imgFlagFill?.withTintColor(.systemCyan)
-        ) { [weak self] _ in
+        let menuItem1 = UIAction(title: "Low", image: imgFlagFill?.withTintColor(.systemCyan)) { [weak self] _ in
             self?.selectedImportance = .low
         }
-        let menuItem2 = UIAction(title: "Medium", image: imgFlagFill?.withTintColor(.systemOrange)
-        ) { [weak self]  _ in
+        let menuItem2 = UIAction(title: "Medium", image: imgFlagFill?.withTintColor(.systemOrange)) { [weak self]  _ in
             self?.selectedImportance = .medium
         }
-        let menuItem3 = UIAction(title: "Hight", image: imgFlagFill?.withTintColor(.systemRed)
-        ) { [weak self]  _ in
+        let menuItem3 = UIAction(title: "Hight", image: imgFlagFill?.withTintColor(.systemRed)) { [weak self]  _ in
             self?.selectedImportance = .high
         }
         return UIMenu(title: "Importance Level", children: [menuItem1, menuItem2, menuItem3])
@@ -135,26 +136,36 @@ final class EditTaskViewController: UIViewController {
     private func colorButtonTapped() -> UIMenu {
         let imgSquareFill = UIImage(systemName: "square.fill")?.withRenderingMode(.alwaysOriginal)
         let menuItem1 = UIAction(title: "Light blue",
-                                 image: imgSquareFill?.withTintColor(.lightBlue)
-        ) { [weak self] _ in
+                                 image: imgSquareFill?.withTintColor(.lightBlue)) { [weak self] _ in
             self?.selectedColor = .lightBlue
         }
         let menuItem2 = UIAction(title: "Light red",
-                                 image: imgSquareFill?.withTintColor(.lightRed)
-        ) { [weak self] _ in
+                                 image: imgSquareFill?.withTintColor(.lightRed)) { [weak self] _ in
             self?.selectedColor = .lightRed
         }
         let menuItem3 = UIAction(title: "Light green",
-                                 image: imgSquareFill?.withTintColor(.lightGreen)
-        ) { [weak self] _ in
+                                 image: imgSquareFill?.withTintColor(.lightGreen)) { [weak self] _ in
             self?.selectedColor = .lightGreen
         }
         let menuItem4 = UIAction(title: "Light yellow",
-                                 image: imgSquareFill?.withTintColor(.lightYellow)
-        ) { [weak self] _ in
+                                 image: imgSquareFill?.withTintColor(.lightYellow)) { [weak self] _ in
             self?.selectedColor = .lightYellow
         }
         return UIMenu(title: "Color options for tasks", children: [menuItem1, menuItem2, menuItem3, menuItem4])
     }
+    
+}
 
+// MARK: - UITextFieldDelegate
+
+extension EditTaskViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == titleField {
+            descField.becomeFirstResponder()
+        } else if textField == descField {
+            textField.resignFirstResponder()
+            didTapSaveTaskButton()
+        }
+        return true
+    }
 }

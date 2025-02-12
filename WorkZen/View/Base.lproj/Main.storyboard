@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X1w-bK-TP7">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -214,12 +213,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="categoryButton" destination="Omt-2u-u2T" id="O95-Lw-V1a"/>
                         <outlet property="chooseDatePicker" destination="Nde-C9-004" id="sTi-WW-0FT"/>
                         <outlet property="colorButton" destination="HHd-L8-BNM" id="JF9-v6-HV4"/>
                         <outlet property="descField" destination="2rD-VJ-bTM" id="tXj-V1-qHv"/>
                         <outlet property="importanceButton" destination="vU9-mF-ff4" id="5is-wk-YZS"/>
                         <outlet property="isCompletionSwitch" destination="eVS-dM-Z2u" id="gv5-TF-KZM"/>
-                        <outlet property="tagButton" destination="Omt-2u-u2T" id="O95-Lw-V1a"/>
                         <outlet property="titleField" destination="LV2-U5-bgo" id="2nb-7t-D1G"/>
                     </connections>
                 </viewController>
@@ -377,12 +376,12 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="r90-gI-k1g"/>
                     <connections>
+                        <outlet property="categoryButton" destination="1ib-eo-boD" id="hiH-2h-1L1"/>
                         <outlet property="chooseDatePicker" destination="moC-rB-cx9" id="PLm-aF-IBR"/>
                         <outlet property="colorButton" destination="SgM-J4-5KC" id="aL3-JT-g5o"/>
+                        <outlet property="descField" destination="f2W-3m-WuO" id="vTx-gF-ou4"/>
                         <outlet property="importanceButton" destination="KWr-v1-C0y" id="UzT-xI-pni"/>
-                        <outlet property="tagButton" destination="1ib-eo-boD" id="hiH-2h-1L1"/>
-                        <outlet property="taskDescField" destination="f2W-3m-WuO" id="vTx-gF-ou4"/>
-                        <outlet property="taskNameField" destination="4fX-2b-iui" id="bmL-Fp-elk"/>
+                        <outlet property="titleField" destination="4fX-2b-iui" id="bmL-Fp-elk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qCe-80-rC2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -460,16 +459,16 @@
         <image name="paintpalette.fill" catalog="system" width="128" height="105"/>
         <image name="tag.fill" catalog="system" width="128" height="118"/>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

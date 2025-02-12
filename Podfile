@@ -5,7 +5,6 @@ target 'WorkZen' do
 
   use_frameworks!
 
-  # Pods for WorkZen
   pod 'SwiftLint'
 
 end

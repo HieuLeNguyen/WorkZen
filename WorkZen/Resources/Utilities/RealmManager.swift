@@ -71,7 +71,7 @@ final class RealmManager {
             switch changes {
             case .initial:
                 onChange()
-            case .update(_, _, _, _):
+            case .update:
                 onChange()
             case .error(let error):
                 print("Realm observe error: \(error.localizedDescription)")
@@ -83,4 +83,3 @@ final class RealmManager {
         notificationToken?.invalidate()
     }
 }
-
